@@ -72,8 +72,3 @@ image = fits.getdata("jdba2sooq_flc.fits")
 mask, cleaned_image = mdl.clean(image, threshold = 0.5, segment = True)
 ```
 
-Note that this won't speed things up if you're using GPU!
-
-### Contributing
-
-We are very interested in getting bug fixes, new functionality, and new trained models from the community (especially for ground-based imaging and spectroscopy). Please fork this repo and issue a PR with your changes. It will be especially helpful if you add some tests for your changes.
