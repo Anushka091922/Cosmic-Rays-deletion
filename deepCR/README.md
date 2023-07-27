@@ -1,23 +1,3 @@
-[![Build Status](https://travis-ci.com/profjsb/deepCR.svg?token=baKtC9yCzzwzzqM9ihAX&branch=master)](https://travis-ci.com/profjsb/deepCR) [![codecov](https://codecov.io/gh/profjsb/deepCR/branch/master/graph/badge.svg?token=SIwJFmKJqr)](https://codecov.io/gh/profjsb/deepCR)
-[![Documentation Status](https://readthedocs.org/projects/deepcr/badge/?version=latest)](https://deepcr.readthedocs.io/en/latest/?badge=latest) [![DOI](https://joss.theoj.org/papers/10.21105/joss.01651/status.svg)](https://doi.org/10.21105/joss.01651) [![arXiv](https://img.shields.io/badge/astro--ph-1907.09500-blue)](https://arxiv.org/abs/1907.09500) 
-
-## deepCR: Deep Learning Based Cosmic Ray Removal for Astronomical Images
-
-Identify and remove cosmic rays from astronomical images using trained convolutional neural networks.
-
-This package is implements the method described in the paper:
-  > **deepCR: Cosmic Ray Rejection with Deep Learning**\
-  > Keming Zhang & Joshua Bloom 2020\
-  > _[Published in the Astrophysical Journal](https://iopscience.iop.org/article/10.3847/1538-4357/ab3fa6)\
-  [arXiv:1907.09500](https://arxiv.org/abs/1907.09500)_
-  
-If you use this package, please cite the paper above and consider including a
-link to this repository.
-
-[Documentation and tutorials](https://deepcr.readthedocs.io)
-
-[Currently available models](https://deepcr.readthedocs.io/en/latest/model_zoo.html)
-
 
 <img src="https://raw.githubusercontent.com/profjsb/deepCR/master/imgs/postage-sm.jpg" wdith="90%">
 
