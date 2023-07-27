@@ -1,0 +1,21 @@
+deepCR is an advanced solution designed to tackle the challenging problem of cosmic ray removal from astronomical images using convolutional neural networks (CNNs). Cosmic rays, being high-energy particles, often leave undesirable artifacts in astronomical data, leading to inaccuracies in scientific analyses and hindering the extraction of reliable information.
+
+The tool's primary objective is to automatically detect and remove cosmic rays from astronomical images, thus enhancing the overall quality and reliability of the data. By leveraging the power of CNNs, deepCR has the ability to learn intricate patterns and features associated with cosmic rays from a diverse training dataset.
+
+Here's how deepCR works:
+
+Training Phase: deepCR is trained on a large dataset of astronomical images that contain cosmic rays. Each image is carefully labeled, marking the locations of the cosmic rays. During training, the CNN learns to recognize the unique signatures of cosmic rays and their distinguishing characteristics.
+
+Cosmic Ray Detection: Once the CNN is trained, it can be applied to new, unprocessed astronomical images. The CNN scans the image pixel by pixel, identifying regions that match the patterns learned during training. These identified regions are potential cosmic ray locations.
+
+Artifact Removal: After detecting the cosmic ray locations, deepCR employs sophisticated interpolation techniques to remove the cosmic ray artifacts from the image. This interpolation process effectively replaces the affected pixels with plausible values, restoring the original appearance of the astronomical scene.
+
+By automating the cosmic ray removal process, deepCR significantly reduces the manual effort required to clean astronomical data, especially in large-scale studies. Moreover, it ensures a more accurate and consistent treatment of cosmic rays, which is crucial for reliable scientific analysis.
+
+Use cases for deepCR include:
+
+Astronomical Research: deepCR is valuable in various astronomical studies, such as galaxy morphology analysis, exoplanet detection, and stellar population studies. It ensures the removal of cosmic ray artifacts that could obscure crucial celestial features.
+
+Observational Surveys: Astronomical surveys often generate massive datasets. deepCR can efficiently process such datasets, saving valuable time and resources by automating cosmic ray removal.
+
+Archival Data: For researchers working with archival astronomical data, deepCR can be a useful tool to preprocess and clean older images contaminated by cosmic rays.
