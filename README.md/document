@@ -2,7 +2,7 @@ deepCR is an advanced solution designed to tackle the challenging problem of cos
 
 The tool's primary objective is to automatically detect and remove cosmic rays from astronomical images, thus enhancing the overall quality and reliability of the data. By leveraging the power of CNNs, deepCR has the ability to learn intricate patterns and features associated with cosmic rays from a diverse training dataset.
 
-Here's how deepCR works:
+# Here's how deepCR works:
 
 Training Phase: deepCR is trained on a large dataset of astronomical images that contain cosmic rays. Each image is carefully labeled, marking the locations of the cosmic rays. During training, the CNN learns to recognize the unique signatures of cosmic rays and their distinguishing characteristics.
 
