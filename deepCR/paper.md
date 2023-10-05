@@ -1,30 +1,6 @@
 ---
 title: 'deepCR: Cosmic Rejection with Deep Learning'
-tags:
-  - Python
-  - Pytorch
-  - astronomy
-  - image processing
-  - cosmic ray
-  - deep learning
 
-authors:
-  - name: Keming Zhang
-    orcid: 0000-0002-9870-5695
-    affiliation: 1 # (Multiple affiliations must be quoted)
-  - name: Joshua S. Bloom
-    orcid: 0000-0002-7777-216X
-    affiliation: "1, 2"
-affiliations:
- - name: Department of Astronomy, University of California, Berkeley
-   index: 1
- - name: Lawrence Berkeley National Laboratory
-   index: 2
-date: 15 August 2019
-bibliography: paper.bib
-aas-doi: 10.3847/1538-4357/ab3fa6
-aas-journal: Astrophysical Journal
----
 
 # Summary
 
@@ -95,8 +71,6 @@ large amounts of precious observational and computational resources.
 
 # Acknowledgements
 
-This work was supported by a Gordon and Betty Moore Foundation Data-Driven Discovery grant, 
-and has made use of the following software:
 
 astropy [@astropy];
 astrodrizzle [@astrodrizzle];
