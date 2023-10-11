@@ -8,7 +8,7 @@ deepCR is an advanced solution designed to address the challenging issue of cosm
 ## Technology Stack:
 
 Python: The core programming language for implementing deep learning models and image processing.
-PyTorch: A popular deep learning framework used to build and train CNNs.
+PyTorch: A popular deep-learning framework used to build and train CNNs.
 Astropy: A library for astronomical data analysis that provides essential tools for working with astronomical data.
 NumPy and SciPy: Fundamental libraries for numerical and scientific computing, used for data manipulation and analysis.
 Matplotlib: A data visualization library used for creating plots and figures.
@@ -24,4 +24,13 @@ Cosmic Ray Detection: After training, the CNN can be applied to new, unprocessed
 Artifact Removal: Once the cosmic ray locations are detected, deepCR employs sophisticated interpolation techniques to remove the cosmic ray artifacts from the image. This interpolation process effectively replaces the affected pixels with plausible values, restoring the original appearance of the astronomical scene.
 
 By automating the cosmic ray removal process, deepCR significantly reduces the manual effort required to clean astronomical data, especially in large-scale studies. Moreover, it ensures a more accurate and consistent treatment of cosmic rays, which is crucial for reliable scientific analysis.
+
+## Practical Applications
+Astronomical Research: deepCR is invaluable in various astronomical studies, such as galaxy morphology analysis, exoplanet detection, and stellar population studies. It ensures the removal of cosmic ray artifacts that could obscure crucial celestial features.
+
+### Observational Surveys:
+Astronomical surveys often generate massive datasets. deepCR can efficiently process such datasets, saving valuable time and resources by automating cosmic ray removal.
+
+### Archival Data:
+For researchers working with archival astronomical data, deepCR can be a useful tool to preprocess and clean older images contaminated by cosmic rays.
 
