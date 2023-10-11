@@ -2,7 +2,6 @@
 ## deepCR: Cosmic Ray Rejection with Deep Learning
 
 
-
 deepCR is an advanced solution designed to address the challenging issue of cosmic ray removal from astronomical images using Convolutional Neural Networks (CNNs). Cosmic rays, high-energy particles, often create unwanted artifacts in astronomical data, which can lead to inaccuracies in scientific analysis and hinder the extraction of reliable information.
 
 ## Technology Stack:
