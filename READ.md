@@ -1,11 +1,11 @@
-Project Description
-deepCR: Cosmic Ray Rejection with Deep Learning
+# Project Description
+## deepCR: Cosmic Ray Rejection with Deep Learning
 
 
 
 deepCR is an advanced solution designed to address the challenging issue of cosmic ray removal from astronomical images using Convolutional Neural Networks (CNNs). Cosmic rays, high-energy particles, often create unwanted artifacts in astronomical data, which can lead to inaccuracies in scientific analysis and hinder the extraction of reliable information.
 
-Technology Stack:
+## Technology Stack:
 
 Python: The core programming language for implementing deep learning models and image processing.
 PyTorch: A popular deep learning framework used to build and train CNNs.
@@ -16,7 +16,7 @@ Scikit-image: An image processing library that enhances image manipulation capab
 Jupyter: An interactive computing environment for creating and sharing documents that contain live code, equations, visualizations, and narrative text.
 Astroscrappy: A Python package for cosmic-ray detection in single images.
 
-Machine Learning Workflow
+## Machine Learning Workflow
 Training Phase: deepCR is trained on a substantial dataset of astronomical images containing cosmic rays. Each image is meticulously labeled, marking the locations of cosmic rays. During training, the CNN learns to recognize the unique signatures and features of cosmic rays.
 
 Cosmic Ray Detection: After training, the CNN can be applied to new, unprocessed astronomical images. It scans the image pixel by pixel, identifying regions that match the patterns learned during training. These identified regions are potential cosmic ray locations.
