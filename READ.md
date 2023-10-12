@@ -51,41 +51,54 @@ Astronomical images are susceptible to cosmic rays, high-energy particles that c
 ## Solution
 deepCR harnesses the capabilities of Convolutional Neural Networks (CNNs) to automate the detection and removal of cosmic rays. It follows a systematic workflow:
 
-## Training Phase: deepCR is trained on a diverse dataset of astronomical images containing cosmic rays. Through meticulous labeling, the CNN learns to identify the distinctive characteristics of these cosmic intruders.
+## Training Phase: 
+deepCR is trained on a diverse dataset of astronomical images containing cosmic rays. Through meticulous labeling, the CNN learns to identify the distinctive characteristics of these cosmic intruders.
 
-## Cosmic Ray Detection: Once trained, deepCR applies its knowledge to new images, scanning them pixel by pixel. It identifies regions matching the learned cosmic ray patterns, marking them as potential cosmic ray locations.
+## Cosmic Ray Detection:
+Once trained, deepCR applies its knowledge to new images, scanning them pixel by pixel. It identifies regions matching the learned cosmic ray patterns, marking them as potential cosmic ray locations.
 
-## Artifact Removal: deepCR employs advanced interpolation techniques to eliminate cosmic ray artifacts. It replaces affected pixels with plausible values, restoring the pristine appearance of the astronomical scene.
+## Artifact Removal: 
+deepCR employs advanced interpolation techniques to eliminate cosmic ray artifacts. It replaces affected pixels with plausible values, restoring the pristine appearance of the astronomical scene.
 
 ## Impact
-deepCR's automated cosmic ray removal brings numerous benefits:
+### deepCR's automated cosmic ray removal brings numerous benefits:
 
-Enhanced Data Quality: Astronomical data becomes cleaner and more reliable, enabling precise scientific analysis.
+### Enhanced Data Quality: 
+Astronomical data becomes cleaner and more reliable, enabling precise scientific analysis.
 
-Time and Resource Savings: Researchers can process extensive datasets efficiently, reducing manual effort.
+### Time and Resource Savings:
+Researchers can process extensive datasets efficiently, reducing manual effort.
 
-Archival Data Revival: Valuable older images can be reclaimed from cosmic ray contamination.
+### Archival Data Revival:
+Valuable older images can be reclaimed from cosmic ray contamination.
 
-Future Prospects
+## Future Prospects
 deepCR is a growing project, and its community-driven "model zoo" ensures compatibility with various instrument configurations. Researchers and astronomers worldwide can benefit from this powerful tool to explore the universe with unprecedented clarity.
 
-Join us on our cosmic journey with deepCR and uncover the universe's hidden wonders.
 
-Dependencies
+## Dependencies
 deepCR relies on a set of essential dependencies to function effectively. These components work seamlessly together to drive the cosmic ray removal process. Here's an overview of the key dependencies:
 
-Python: The core programming language for implementing deep learning models and image processing.
-PyTorch: A deep learning framework for building and training neural networks.
-Astropy: A library for astronomical data analysis, providing essential tools for working with astronomical data.
-NumPy and SciPy: Fundamental libraries for numerical and scientific computing, used for data manipulation and analysis.
-Matplotlib: A data visualization library used for creating plots and figures.
-Scikit-image: An image processing library that enhances image manipulation capabilities.
-Jupyter: An interactive computing environment for creating and sharing documents with live code, equations, visualizations, and text.
-Astroscrappy: A Python package specialized in cosmic-ray detection in single images.
+### Python:
+The core programming language for implementing deep learning models and image processing.
+### PyTorch: 
+A deep learning framework for building and training neural networks.
+### Astropy:
+A library for astronomical data analysis, providing essential tools for working with astronomical data.
+### NumPy and SciPy:
+Fundamental libraries for numerical and scientific computing, used for data manipulation and analysis.
+### Matplotlib:
+A data visualization library used for creating plots and figures.
+### Scikit-image:
+An image processing library that enhances image manipulation capabilities.
+### Jupyter:
+An interactive computing environment for creating and sharing documents with live code, equations, visualizations, and text.
+### Astroscrappy:
+A Python package specialized in cosmic-ray detection in single images.
 These dependencies form the backbone of deepCR, ensuring its efficiency and effectiveness in cosmic ray rejection. Researchers and astronomers rely on this powerful stack to enhance the quality of their astronomical data.
 
 
-Images:
+## Images:
 
 
 
@@ -101,7 +114,7 @@ Images:
 
 
 
-References
+## References
 deepCR GitHub Repository
 Astropy
 PyTorch
@@ -113,7 +126,7 @@ Astroscrappy
 
 
 
-Installation
+## Installation
 pip install deepCR
 Or you can install from source:
 git clone https://github.com/profjsb/deepCR.git
@@ -128,20 +141,20 @@ from deepCR import deepCR
 from astropy.io import fits
 image = fits.getdata("jdba2sooq_flc.fits")[:512,:512]
 
-# create an instance of deepCR with specified model configuration
+## create an instance of deepCR with specified model configuration
 mdl = deepCR(mask="ACS-WFC-F606W-2-32",
 	     inpaint="ACS-WFC-F606W-2-32",
              device="CPU")
 
-# apply to input image
+## apply to input image
 mask, cleaned_image = mdl.clean(image, threshold = 0.5)
-# best threshold is highest value that generate mask covering full extent of CR
+## best threshold is highest value that generate mask covering full extent of CR
 # choose threshold by visualizing outputs.
 
-# if you only need CR mask you may skip image inpainting and save time
+## if you only need CR mask you may skip image inpainting and save time
 mask = mdl.clean(image, threshold = 0.5, inpaint=False)
 
-# if you want probabilistic cosmic ray mask instead of binary mask
+## if you want probabilistic cosmic ray mask instead of binary mask
 prob_mask = mdl.clean(image, binary=False)
 There's also the option to segment your input image into smaller pieces (default: 256-by-256) and process the individual piece seperately before stitching them back together. This enables multi-process parallelism and saves memory.
 Segment-and-stitching is enabled by n_jobs>1, which specified the number of processes to utilize. n_jobs=-1 is the number of available virtual cores on your machine and is optimized for time when your torch is not intel MKL optimized (see below for more details).
@@ -160,11 +173,11 @@ setup_requires = ['setuptools >= 30.3.0']
 if {'pytest', 'test', 'ptr'}.intersection(sys.argv):
     setup_requires.append('pytest-runner')
 
-# Get docstring and version without importing module
+## Get docstring and version without importing module
 with open('deepCR/__init__.py') as f:
     mod = ast.parse(f.read())
 
-# read the contents of your README file
+## read the contents of your README file
 from os import path
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
@@ -181,7 +194,7 @@ setup(description=__doc__.splitlines()[1],
       setup_requires=setup_requ
 
 
-Quickstart
+## Quickstart
 pip install deepCR
 Or you can install from source:
 git clone https://github.com/profjsb/deepCR.git
@@ -199,7 +212,7 @@ Hubble ACS/WFC
 from deepCR import deepCR
 model_cpu = deepCR(mask=MODEL_NAME, inpaint='ACS-WFC-F606W-2-32', device='CPU')
 model_gpu = deepCR(mask=MODEL_NAME, inpaint='ACS-WFC-F606W-2-32', device='GPU')
-ACS-WFC-2-32 model is trained with image sets from ACS/WFC F435W, F606W, F814W. Individual models are also available as ACS-WFC-F435W-2-32, ACS-WFC-F606W-2-32, ACS-WFC-F814W-2-32. The global model was tested with all three filter test datasets to demonstrate that there is no significant performance gap between the global model and the individual models. Refer to the ROC curves below. The Y-axis denotes the true positive rate (TPR), and X-axis denotes the false positive rate (FPR).
+ACS-WFC-2-32 model is trained with image sets from ACS/WFC F435W, F606W, F814W. Individual models are also available as ACS-WFC-F435W-2-32, ACS-WFC-F606W-2-32, and ACS-WFC-F814W-2-32. The global model was tested with all three filter test datasets to demonstrate that there is no significant performance gap between the global model and the individual models. Refer to the ROC curves below. The Y-axis denotes the true positive rate (TPR), and X-axis denotes the false positive rate (FPR).
 Since the training and test datasets comprise images from three different fields (extragalactic field, globular cluster, resolved galaxy), the models were tested for each field. As shown, there is no significant discrepancy between individual models' performance and the global model.
 
 
@@ -213,11 +226,16 @@ model_gpu = deepCR(mask='decam', device='GPU')
 
 
 The ROC curves above are produced from a test set that contains noise in cosmic ray labels. This causes TPR to be lower than actual because the deepCR predicted CR labels is essentially noise-free.
-Note 0: The current DECam model as preliminary as it is trained on median-coadd science images which may cause false positives of stars in single frame images in some cases.
-Note 1: Output will include some bad pixels and columns, and sometimes blooming patterns. In particular, the blooming artifacts in the CR mask might be 1-2 pixels larger than the actual blooming size and cannot be excluded by subtracting by a saturation mask.
-Note 2:Input images should come from calibrated images in the original unit (adu).
-Note 3: Model is trained on g-band images but is expected to work on other filters as well. We have benchmarked on g-band and r-band and are working i-band and z-band but only expect minor differences from the ROC curves above.
-Note 4: For extremely short or long exposures (t_exp < 10s or t_exp > 1800s), please visually verify mask output.
+## Note 0: 
+The current DECam model as preliminary as it is trained on median-coadd science images which may cause false positives of stars in single frame images in some cases.
+### Note 1: 
+Output will include some bad pixels and columns, and sometimes blooming patterns. In particular, the blooming artifacts in the CR mask might be 1-2 pixels larger than the actual blooming size and cannot be excluded by subtracting by a saturation mask.
+### Note 2:
+Input images should come from calibrated images in the original unit (adu).
+### Note 3:
+Model is trained on g-band images but is expected to work on other filters as well. We have benchmarked on g-band and r-band and are working i-band and z-band but only expect minor differences from the ROC curves above.
+### Note 4:
+For extremely short or long exposures (t_exp < 10s or t_exp > 1800s), please visually verify mask output.
 
 
 
