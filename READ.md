@@ -1,5 +1,6 @@
 # Project Description
 ## deepCR: Cosmic Ray Rejection with Deep Learning
+![image 1](https://github.com/Anushka091922/Cosmic-Rays-deletion/assets/114327511/49c7575f-205b-4d16-b1ba-4b2b78c5b9b1)
 
 
 deepCR is an advanced solution designed to address the challenging issue of cosmic ray removal from astronomical images using Convolutional Neural Networks (CNNs). Cosmic rays, high-energy particles, often create unwanted artifacts in astronomical data, which can lead to inaccuracies in scientific analysis and hinder the extraction of reliable information.
@@ -100,6 +101,9 @@ These dependencies form the backbone of deepCR, ensuring its efficiency and effe
 
 ### Images:
 
+![image 2](https://github.com/Anushka091922/Cosmic-Rays-deletion/assets/114327511/75fe7f0a-1a54-4edd-98d4-e046332fabca)
+
+![image 4](https://github.com/Anushka091922/Cosmic-Rays-deletion/assets/114327511/760da564-d27e-484b-a51c-4333f4bda011)
 
 
 
