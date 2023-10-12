@@ -72,11 +72,11 @@ Researchers can process extensive datasets efficiently, reducing manual effort.
 ### Archival Data Revival:
 Valuable older images can be reclaimed from cosmic ray contamination.
 
-## Future Prospects
+### Future Prospects
 deepCR is a growing project, and its community-driven "model zoo" ensures compatibility with various instrument configurations. Researchers and astronomers worldwide can benefit from this powerful tool to explore the universe with unprecedented clarity.
 
 
-## Dependencies
+### Dependencies
 deepCR relies on a set of essential dependencies to function effectively. These components work seamlessly together to drive the cosmic ray removal process. Here's an overview of the key dependencies:
 
 ### Python:
@@ -98,7 +98,7 @@ A Python package specialized in cosmic-ray detection in single images.
 These dependencies form the backbone of deepCR, ensuring its efficiency and effectiveness in cosmic ray rejection. Researchers and astronomers rely on this powerful stack to enhance the quality of their astronomical data.
 
 
-## Images:
+### Images:
 
 
 
@@ -114,7 +114,7 @@ These dependencies form the backbone of deepCR, ensuring its efficiency and effe
 
 
 
-## References
+### References
 deepCR GitHub Repository
 Astropy
 PyTorch
@@ -126,7 +126,7 @@ Astroscrappy
 
 
 
-## Installation
+### Installation
 pip install deepCR
 Or you can install from source:
 git clone https://github.com/profjsb/deepCR.git
@@ -141,20 +141,20 @@ from deepCR import deepCR
 from astropy.io import fits
 image = fits.getdata("jdba2sooq_flc.fits")[:512,:512]
 
-## create an instance of deepCR with specified model configuration
+### create an instance of deepCR with specified model configuration
 mdl = deepCR(mask="ACS-WFC-F606W-2-32",
 	     inpaint="ACS-WFC-F606W-2-32",
              device="CPU")
 
-## apply to input image
+### apply to input image
 mask, cleaned_image = mdl.clean(image, threshold = 0.5)
-## best threshold is highest value that generate mask covering full extent of CR
-# choose threshold by visualizing outputs.
+### best threshold is highest value that generate mask covering full extent of CR
+ choose threshold by visualizing outputs.
 
-## if you only need CR mask you may skip image inpainting and save time
+### if you only need CR mask you may skip image inpainting and save time
 mask = mdl.clean(image, threshold = 0.5, inpaint=False)
 
-## if you want probabilistic cosmic ray mask instead of binary mask
+### if you want probabilistic cosmic ray mask instead of binary mask
 prob_mask = mdl.clean(image, binary=False)
 There's also the option to segment your input image into smaller pieces (default: 256-by-256) and process the individual piece seperately before stitching them back together. This enables multi-process parallelism and saves memory.
 Segment-and-stitching is enabled by n_jobs>1, which specified the number of processes to utilize. n_jobs=-1 is the number of available virtual cores on your machine and is optimized for time when your torch is not intel MKL optimized (see below for more details).
@@ -173,11 +173,11 @@ setup_requires = ['setuptools >= 30.3.0']
 if {'pytest', 'test', 'ptr'}.intersection(sys.argv):
     setup_requires.append('pytest-runner')
 
-## Get docstring and version without importing module
+### Get docstring and version without importing module
 with open('deepCR/__init__.py') as f:
     mod = ast.parse(f.read())
 
-## read the contents of your README file
+### read the contents of your README file
 from os import path
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
@@ -194,7 +194,7 @@ setup(description=__doc__.splitlines()[1],
       setup_requires=setup_requ
 
 
-## Quickstart
+### Quickstart
 pip install deepCR
 Or you can install from source:
 git clone https://github.com/profjsb/deepCR.git
